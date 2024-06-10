@@ -1,0 +1,21 @@
+name:
+namespace:
+
+replicaCount: 1
+image:
+  repository: flask-app
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+
+env:
+  S3_BUCKET_NAME: your-bucket-name
+
+serviceAccount:
+  create: true
+  name: ""
+  annotations: {}
+  iamRoleArn: ""
